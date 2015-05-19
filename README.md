@@ -1,2 +1,2 @@
 # KSP-Contract-Packs
-Contract Packs for Contract Configurator
+Astronaut Training Contracts for Contract Configurator
