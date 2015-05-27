@@ -1,39 +1,45 @@
 	CONTRACT_TYPE
 		{
-		name = ScientistShadowing
+		name = EngineerShadowing
 		title = Shadowing
-
-		description = Have you noticed how good the crew are getting? One of our top students, Lorble, has made a number of our most recent breakthroughs alone. An impressive candidate indeed! Unfortunately, Lorble's most recent experiment on the possibility of giving our kerbonauts superpowers resulted in nothing more than some form of mystery goo, and Lorble appears to have taken an unauthorised leave of absence. Given this annoying habit of performing experiments that result in goo before quietly walking out on us, we need to make sure we've got a few talented scientists in reserve in case our more experienced ones take off.
-		synopsis = You should probably train up a backup scientist.
-		completedMessage = They say science is our future. I don't know if that's true, but it's always nice to have more scientists to push around. Thanks for maintaining our supply!
+		
+		description = Have you noticed how good the crew are getting? Jonbert, one of our most promising apprentices, managed to build something called a "warp drive." Apparently, if we installed this device in our ships, it would cut travel times down to hours. Unfortunately, in testing, Jonbert kind of... vanished Along with the device. And part of the lab. Given the tendency of our engineers to explode, vapourise, or otherwise incapacitate themselves, it seems that it would be a good idea to have someone ready to replace our best and brightest when the inevitable happens.
+		synopsis = You should probably train up a backup engineer.
+		completedMessage = Nice work! Now we don't need to worry about losing our top technical minds. Redundancy in tech, redundancy in technicians, security in progress!
 
 		group = Shadow
-    agent = KASA KRR Division
+		agent = KASA KRR Division
 		prestige = Significant
 		maxSimultaneous = 1
 
 		failureReputation = 50.0
 		weight = 5.0
 
+		DATA
+			{
+			type = int
+			requiredvalue = true
+			ranum = random (10.0, 50.0)
+			}
+
 		PARAMETER
 			{
 			name = TrainABackup1
 			type = HasAstronaut
-			trait = Scientist
+			trait = Engineer
 			minExperience = 1
 			minCount = 2
 			disableOnStateChange = false
-			rewardReputation = 52
-			notes = Train a backup Scientist to level 1
+			rewardReputation = @/ranum * 2 * 0.75
 			REQUIREMENT
 				{
 				name = SkillGapL2
 				type = All
 				REQUIREMENT
 					{
-					name = L2Scientist
+					name = L2Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 2
 					maxExperience = 2
 					maxCount = 1
@@ -42,7 +48,7 @@
 					{
 					name = LevelGap1
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 1
 					maxCount = 1
 					}
@@ -53,21 +59,20 @@
 			{
 			name = TrainABackup2
 			type = HasAstronaut
-			trait = Scientist
+			trait = Engineer
 			minExperience = 2
 			minCount = 2
 			disableOnStateChange = false
-			rewardReputation = 79
-			notes = Train a backup Scientist to level 2
+			rewardReputation = @/ranum * 3 * 0.75
 			REQUIREMENT
 				{
 				name = SkillGapL3
 				type = All
 				REQUIREMENT
 					{
-					name = L3Scientist
+					name = L3Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 3
 					maxExperience = 3
 					maxCount = 1
@@ -76,7 +81,7 @@
 					{
 					name = LevelGap2
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 2
 					maxCount = 1
 					}
@@ -87,21 +92,20 @@
 			{
 			name = TrainABackup3
 			type = HasAstronaut
-			trait = Scientist
+			trait = Engineer
 			minExperience = 3
 			minCount = 2
 			disableOnStateChange = false
-			rewardReputation = 105
-			notes = Train a backup Scientist to level 3
+			rewardReputation = @/ranum * 4 * 0.75
 			REQUIREMENT
 				{
 				name = SkillGapL4
 				type = All
 				REQUIREMENT
 					{
-					name = L4Scientist
+					name = L4Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 4
 					maxExperience = 4
 					maxCount = 1
@@ -110,7 +114,7 @@
 					{
 					name = LevelGap3
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 3
 					maxCount = 1
 					}
@@ -121,21 +125,20 @@
 			{
 			name = TrainABackup4
 			type = HasAstronaut
-			trait = Scientist
+			trait = Engineer
 			minExperience = 4
 			minCount = 2
 			disableOnStateChange = false
-			rewardReputation = 131
-			notes = Train a backup Scientist to level 4
+			rewardReputation = @/ranum * 5 * 0.75
 			REQUIREMENT
 				{
 				name = SkillGapL5
 				type = All
 				REQUIREMENT
 					{
-					name = L5Scientist
+					name = L5Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 5
 					maxExperience = 5
 					maxCount = 1
@@ -144,7 +147,7 @@
 					{
 					name = LevelGap
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 4
 					maxCount = 1
 					}
@@ -161,9 +164,9 @@
 				type = All
 				REQUIREMENT
 					{
-					name = L2Scientist
+					name = L2Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 2
 					maxExperience = 2
 					maxCount = 1
@@ -172,7 +175,7 @@
 					{
 					name = LevelGap
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 1
 					maxCount = 1
 					}
@@ -183,9 +186,9 @@
 				type = All
 				REQUIREMENT
 					{
-					name = L3Scientist
+					name = L3Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 3
 					maxExperience = 3
 					maxCount = 1
@@ -194,7 +197,7 @@
 					{
 					name = LevelGap
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 2
 					maxCount = 1
 					}
@@ -205,9 +208,9 @@
 				type = All
 				REQUIREMENT
 					{
-					name = L4Scientist
+					name = L4Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 4
 					maxExperience = 4
 					maxCount = 1
@@ -216,7 +219,7 @@
 					{
 					name = LevelGap
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 3
 					maxCount = 1
 					}
@@ -227,9 +230,9 @@
 				type = All
 				REQUIREMENT
 					{
-					name = L5Scientist
+					name = L5Engineer
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 5
 					maxExperience = 5
 					maxCount = 1
@@ -238,7 +241,7 @@
 					{
 					name = LevelGap
 					type = HasAstronaut
-					trait = Scientist
+					trait = Engineer
 					minExperience = 4
 					maxCount = 1
 					}
